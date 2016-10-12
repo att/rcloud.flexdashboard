@@ -27,6 +27,11 @@
             }
 
             k()
+        },
+
+        render: function(target, html, k) {
+            $(target).html(html);
+            k(null, target);
         }
     }
 

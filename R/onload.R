@@ -1,4 +1,6 @@
 
+caps <- NULL
+
 .onLoad <- function(libname, pkgname) {
 
   path <- system.file(
@@ -7,7 +9,7 @@
     "rcloud.flexdashboard.js"
   )
 
-  caps <- rcloud.install.js.module(
+  caps <<- rcloud.install.js.module(
     "rcloud.flexdashboard",
     paste(readLines(path), collapse = '\n')
   )
