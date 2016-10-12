@@ -3,9 +3,11 @@ Type: Package
 Title: 'flexdashboard' Documents in RCloud Notebooks
 Version: 1.0.0
 Date: 2016-10-12
-Author: Gábor Csárdi
-Maintainer: Gábor Csárdi <gcsardi@mango-solutions.com>
-Description: Create, edit and show a 'felxdashboard' dashboard in an
+Authors@R: person("Gábor", "Csárdi", email = "gcsardi@mango-solutions.com",
+             role = c("aut", "cre"))
+Description: Create, edit and show a 'flexdashboard' dashboard in an
     RCloud notebook.
 License: MIT + file LICENSE
+RCloud-Extension: gui
 Encoding: UTF-8
+RoxygenNote: 5.0.1.9000
