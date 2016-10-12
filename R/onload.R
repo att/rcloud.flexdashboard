@@ -17,9 +17,7 @@
   if (!is.null(caps)) caps$init(ocaps)
 }
 
-.rcloud.export.ocaps <- function() {
-  list(renderFlexDashboard)
-}
+.rcloud.export.ocaps <- function() { list() }
 
 make_oc <- function(x) {
   do.call(base::`:::`, list("rcloud.support", "make.oc"))(x)
