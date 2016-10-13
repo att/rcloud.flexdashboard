@@ -30,6 +30,7 @@
         },
 
         render: function(target, html, k) {
+            $('#rcloud-flexdashboard-loading').remove();
             $(target).html(html);
             k(null, target);
         }

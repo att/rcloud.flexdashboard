@@ -39,7 +39,7 @@ renderFlexDashboard <- function(id, version = NULL) {
   caps$render(
     "#rcloud-flexdashboard",
     paste0(
-      "<iframe frameBorder=\"0\" width=\"100%\" height=\"1000px\" srcdoc=\"",
+      "<iframe frameBorder=\"0\" width=\"100%\" height=\"100%\" srcdoc=\"",
       gsub("\"", "&quot;", contents),
       "\"></iframe>"
     )

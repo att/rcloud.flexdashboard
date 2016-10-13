@@ -1,0 +1,15 @@
+body, html {
+    margin: 0; padding: 0; height: 100%; overflow: hidden;
+}
+
+#rcloud-flexdashboard {
+    position:absolute; left: 0; right: 0; bottom: 0; top: 0px; 
+}
+
+.centered {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+}
