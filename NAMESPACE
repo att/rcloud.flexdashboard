@@ -1,5 +1,6 @@
 
 importFrom(flexdashboard, flex_dashboard)
+importFrom(rcloud.rmd, exportRmd)
 importFrom(rcloud.support, rcloud.get.notebook)
 importFrom(rcloud.support, rcloud.install.js.module)
 importFrom(rcloud.support, rcloud.session.notebook)

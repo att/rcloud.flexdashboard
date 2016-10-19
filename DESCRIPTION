@@ -13,4 +13,5 @@ Encoding: UTF-8
 RoxygenNote: 5.0.1.9000
 Imports:
     flexdashboard,
+    rcloud.rmd,
     rcloud.support
