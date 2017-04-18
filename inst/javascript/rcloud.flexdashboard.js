@@ -15,6 +15,10 @@
                 });
 
             } else {
+                onError = function(x) {
+                    $('#rcloud-flexdashboard-loading').remove();
+                    RCloud.UI.fatal_dialog(x.message, "Close")
+                }
 
                 oc = RCloud.promisify_paths(ocaps, [
                     ['renderFlexDashboard']
@@ -22,7 +26,7 @@
 
                 window.RCloudFlexDashboard = window.RCloudFlexDashboard || {};
                 window.RCloudFlexDashboard.renderFlexDashboard = function(x, y) {
-                    oc.renderFlexDashboard(x, y).then(function() {});
+                    oc.renderFlexDashboard(x, y).catch(onError).then(function() {});
                 }
             }
 
