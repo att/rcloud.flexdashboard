@@ -50,9 +50,6 @@ function main() {
             promise = promise.then(function() {
                 // Just tell R to load the rcloud.flexdashboard package,
                 // and the packag will do the rest
-                if(!rcloud._ocaps.load_module_package) {
-                  throw new Error("Can't load 'rcloud.flexdashboard' - loading of modules is disabled.");
-                }
                 rcloud._ocaps.load_module_package(
                     "rcloud.flexdashboard",
                     function(x) {
