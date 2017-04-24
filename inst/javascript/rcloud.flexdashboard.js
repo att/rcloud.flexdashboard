@@ -35,7 +35,15 @@
 
         render: function(target, html, k) {
             $('#rcloud-flexdashboard-loading').remove();
-            $(target).html(html);
+            var content = "<iframe frameBorder=\"0\" width=\"100%\" height=\"100%\" srcdoc=\"" + html + "\"></iframe>";
+            var parsed = $(html)
+            var title = parsed.filter('title').text();
+            if(title!=="") {
+              document.title = title
+            } else {
+              document.title = "RCloud flexdashboard"
+            }           
+            $(target).html(content);
             k(null, target);
         }
     }

@@ -15,12 +15,8 @@ renderFlexDashboard <- function(id, version = NULL) {
   contents <- paste(readLines(tmp2), collapse = "\n")
 
   caps$render(
-    "#rcloud-flexdashboard",
-    paste0(
-      "<iframe frameBorder=\"0\" width=\"100%\" height=\"100%\" srcdoc=\"",
-      gsub("\"", "&quot;", contents),
-      "\"></iframe>"
-    )
+    "#rcloud-flexdashboard", 
+    gsub("\"", "&quot;", contents)
   )
 
   invisible()
