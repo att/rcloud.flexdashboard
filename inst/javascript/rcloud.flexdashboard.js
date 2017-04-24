@@ -39,7 +39,7 @@
             var parsed = $(html);
             var title = parsed.filter('title').text();
             if(title!=="") {
-                document.title = title;
+                document.title = title + " - RCloud";
             } else {
                 document.title = "RCloud flexdashboard";
             }
