@@ -2,8 +2,9 @@
 renderFlexDashboard <- function(id, version = NULL) {
   tmp_dir <- tempfile("flexdashboard")
   dir.create(tmp_dir)
-
-    tmp <- tempfile(tmpdir = tmp_dir, fileext = ".Rmd")
+  on.exit(unlink(tmp_dir), add = TRUE)
+  
+  tmp <- tempfile(tmpdir = tmp_dir, fileext = ".Rmd")
   exportRmd(id, version, file = tmp)
   exportCss(id, version, tmp_dir)
   
@@ -14,9 +15,8 @@ renderFlexDashboard <- function(id, version = NULL) {
     input = tmp,
     output_file = tmp2
   )
-
   contents <- paste(readLines(tmp2), collapse = "\n")
-  contents <- paste0(contents, "<!-- ", tmp_dir, "-->")
+
   caps$render(
     "#rcloud-flexdashboard", 
     gsub("\"", "&quot;", contents)
