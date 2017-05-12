@@ -1,17 +1,13 @@
 
 renderFlexDashboard <- function(id, version = NULL) {
-#  tmp <- tempfile(fileext = ".Rmd") 
-#  on.exit(unlink(tmp), add = TRUE)
   tmp_dir <- tempfile("flexdashboard")
   dir.create(tmp_dir)
-#  on.exit(unlink(tmp_dir, recursive = TRUE), add = TRUE)
-  tmp <- tempfile(tmpdir = tmp_dir, fileext = ".Rmd")
+
+    tmp <- tempfile(tmpdir = tmp_dir, fileext = ".Rmd")
   exportRmd(id, version, file = tmp)
   exportCss(id, version, tmp_dir)
   
   tmp2 <- tempfile(fileext = ".html", tmpdir = tmp_dir)
-#  tmp2 <- tempfile(fileext = ".html")
-#  on.exit(unlink(tmp2), add = TRUE)
   knitr:::knit_hooks$set(eval = progress_hook)
   on.exit(knitr:::knit_hooks$set(eval = NULL), add = TRUE)
   render(
