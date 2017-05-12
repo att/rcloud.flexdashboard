@@ -45,6 +45,10 @@
             }
             $(target).html(content);
             k(null, target);
+        },
+        progress: function(target, html, k) {
+            $('#rcloud-flexdashboard-progress').html(html);
+            k(null, target);
         }
     };
 

@@ -1,4 +1,3 @@
-
 importFrom(flexdashboard, flex_dashboard)
 importFrom(rcloud.rmd, exportRmd)
 importFrom(rcloud.support, rcloud.get.notebook)
