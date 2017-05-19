@@ -20,7 +20,7 @@ function main() {
 
     rclient = RClient.create({
         debug: false,
-        mode: "client", // "IDE" = edit (separated), "call" = API (one process), "client" = JS (currently one process but may change)
+        mode: "addons", // Do load addons. Don't do much else.
         host: location.href.replace(/^http/,"ws").replace(/#.*$/,""),
         on_connect: function(ocaps) {
             rcloud = RCloud.create(ocaps.rcloud);
@@ -48,17 +48,14 @@ function main() {
                 });
             };
             promise = promise.then(function() {
-                // Just tell R to load the rcloud.flexdashboard package,
-                // and the packag will do the rest
-                rcloud._ocaps.load_module_package(
-                    "rcloud.flexdashboard",
-                    function(x) {
-                        window.RCloudFlexDashboard.renderFlexDashboard(
-                            notebook,
-                            version,
-                            function(x) { console.log(x); }
-                        );
-                    }
+                // if rcloud.flexdashboard is properly loaded as an rcloud addon, it
+                // will have already loaded and installed its ocap during session_init
+                if(!window.RCloudFlexDashboard.renderFlexDashboard)
+                    throw new Error('rcloud.flexdashboard must be specified in rcloud.alluser.addons');
+                window.RCloudFlexDashboard.renderFlexDashboard(
+                    notebook,
+                    version,
+                    function(x) { console.log(x); }
                 );
             });
             promise = promise.catch(onError);
