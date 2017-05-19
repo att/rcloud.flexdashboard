@@ -47,7 +47,9 @@
             k(null, target);
         },
         progress: function(target, html, k) {
-            $('#rcloud-flexdashboard-progress').html(html);
+            $('#rcloud-flexdashboard-progress')
+                .css('visibility', 'visible')
+                .html(html);
             k(null, target);
         }
     };

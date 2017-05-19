@@ -13,3 +13,8 @@ body, html {
   /* bring your own prefixes */
   transform: translate(-50%, -50%);
 }
+
+#rcloud-flexdashboard-progress {
+    margin-top: 1em;
+    text-align: center;
+}
