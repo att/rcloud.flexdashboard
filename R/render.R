@@ -1,5 +1,7 @@
 
 renderFlexDashboard <- function(id, version = NULL) {
+  if(rcloud.session.info()$user == "" && !rcloud.is.notebook.published(id))
+    stop("Notebook \"", URLencode(id, TRUE), "\" does not exist or has not been published")
   tmp_dir <- tempfile("flexdashboard")
   dir.create(tmp_dir)
   on.exit(unlink(tmp_dir), add = TRUE)
