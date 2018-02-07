@@ -51,6 +51,14 @@
                 .css('visibility', 'visible')
                 .html(html);
             k(null, target);
+        },
+        
+        renderShinyUrl: function(target, url, k) {
+            $('#rcloud-flexdashboard-loading').remove();
+            var content = '<iframe src="'+url+'" class="rcloud-shiny" frameBorder="0" style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%;"></iframe>';
+            document.title = "RCloud flexdashboard";
+            $(target).html(content);
+            k(null, target);
         }
     };
 

@@ -2,6 +2,12 @@
 caps <- NULL
 
 .onLoad <- function(libname, pkgname) {
+  
+  if (requireNamespace("rcloud.shiny", quietly = TRUE)) {
+    # We are loading this here to make sure that rcloud.shiny registers its ocaps
+    # yet still keep rcloud.shiny as an optional pacakge.
+    library("rcloud.shiny")
+  }
 
   path <- system.file(
     package = "rcloud.flexdashboard",

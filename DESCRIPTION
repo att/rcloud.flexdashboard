@@ -11,6 +11,8 @@ License: MIT + file LICENSE
 RCloud-Extension: gui
 Encoding: UTF-8
 RoxygenNote: 5.0.1.9000
+Suggests:
+    rcloud.shiny
 Imports:
     flexdashboard,
     rmarkdown,
