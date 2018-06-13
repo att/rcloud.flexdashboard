@@ -1,3 +1,6 @@
+## 1.1.0
+- supports shiny in dashboards
+
 ## 1.0.3
 - allow running dashboards anonymously, by changing execution mode to make sure rcloud addons are loaded
 
