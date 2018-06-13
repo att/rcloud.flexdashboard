@@ -50,7 +50,7 @@ function main() {
             promise = promise.then(function() {
                 // if rcloud.flexdashboard is properly loaded as an rcloud addon, it
                 // will have already loaded and installed its ocap during session_init
-                if(!window.RCloudFlexDashboard.renderFlexDashboard)
+                if(!window.RCloudFlexDashboard || !window.RCloudFlexDashboard.renderFlexDashboard)
                     throw new Error('rcloud.flexdashboard must be specified in rcloud.alluser.addons');
                 window.RCloudFlexDashboard.renderFlexDashboard(
                     notebook,
