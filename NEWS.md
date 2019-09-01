@@ -1,3 +1,6 @@
+## 1.1.1
+Fix accidental globals that could clobber other RCloud extensions
+
 ## 1.1.0
 - supports shiny in dashboards
 

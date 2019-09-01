@@ -15,12 +15,12 @@
                 });
 
             } else {
-                onError = function(x) {
+                var onError = function(x) {
                     $('#rcloud-flexdashboard-loading').remove();
                     RCloud.UI.fatal_dialog(x.message, "Close");
                 };
 
-                oc = RCloud.promisify_paths(ocaps, [
+                var oc = RCloud.promisify_paths(ocaps, [
                     ['renderFlexDashboard']
                 ], true);
 
@@ -52,7 +52,6 @@
                 .html(html);
             k(null, target);
         },
-        
         renderShinyUrl: function(target, url, k) {
             $('#rcloud-flexdashboard-loading').remove();
             var content = '<iframe src="'+url+'" class="rcloud-shiny" frameBorder="0" style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%;"></iframe>';
