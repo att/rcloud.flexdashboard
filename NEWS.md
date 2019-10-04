@@ -1,3 +1,6 @@
+## 1.1.2
+Qualify call to `rmarkdown:::yaml_front_matter`.. probably churn in the ecosystem
+
 ## 1.1.1
 Fix accidental globals that could clobber other RCloud extensions
 
