@@ -16,7 +16,7 @@ rmarkdown.run.override <- function(file, dir = dirname(file), auto_reload = TRUE
   if (is.null(render_args$envir)) 
     render_args$envir <- parent.frame()
   if (!is.null(target_file)) 
-    runtime <- yaml_front_matter(target_file, encoding)$runtime
+    runtime <- rmarkdown:::yaml_front_matter(target_file, encoding)$runtime
   else runtime <- NULL
   if (rmarkdown:::is_shiny_prerendered(runtime)) {
     app <- shiny_prerendered_app.override(target_file, encoding = encoding, 
